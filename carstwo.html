@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighbours Cars</title>
+
+
+    <!-- sty -->
+    <style>
+        table{
+            border: 1px solid black;
+        }
+        tbody tr td {
+           border: 1px solid #000;
+      }
+    </style>
+    
+</head>
+<body>
+    <table  style="border-spacing: 0px; margin-left: auto; margin-right: auto; margin-top: 150px; margin-bottom: auto;">
+        <tr  class="bg-info">
+           <th>Cars in my Garage</th>
+        </tr>
+    
+        <tbody id="myTable">
+            
+        </tbody>
+    </table>
+
+    <script>
+        var myCars = [       
+            {'position':'myArray[0]', 'carType':'BMW M4'},
+            {'position':'myArray[1]', 'carType':'Nissan Versa'},
+            {'position':'myArray[2]', 'carType':'Honda Civic'},
+            {'position':'myArray[3]', 'carType':'Hyundai Elantra Hybrid'},
+            {'position':'myArray[4]', 'carType':'Nissan Magnite'},
+            {'position':'myArray[5]', 'carType':'Hyundai Alcazar'},
+        ]
+
+        let carsToUnshift = ["BMW M4", "Nissan Versa", "Honda Civic", "Hyundai Elantra Hybrid", "Nissan Magnite", "Hyundai Alcazar"];
+
+        carsToUnshift.unshift("Mercedes Benz S-Class")
+  
+        window.alert("car at index zero is"+carsToUnshift[0]);
+        
+        buildTable(myCars) 
+    
+    
+        function buildTable(data){
+            var table = document.getElementById('myTable')
+    
+            for (var i = 0; i < data.length; i++){
+                var row = `<tr>
+
+                    <td>${data[i].position}</td>
+                    
+                                <td>${data[i].carType}</td>
+                                
+                          </tr>`
+                table.innerHTML += row   
+    
+            }
+        }
+    
+    </script>    
+</body>
+</html>
+
+
+
+

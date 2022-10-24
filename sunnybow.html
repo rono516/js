@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunny Bowside Club</title>
+
+<style>
+    btns{
+        display: inline; margin-right: 20px;
+  
+        margin: 0 auto;
+
+    }
+    
+</style>
+</head>
+<body>
+
+    <h2>Welcome to Pretoria Sunnyside Bowling club</h2>
+<form name="myForm" action="" onsubmit="confirmData()">
+
+
+	<fieldset>
+	<h2 style="text-align: center ;">Sign-Up Form</h2>
+    <img src="sunnyside.png" height="250px" width="350px" style="margin-left: auto; margin-right: auto;">
+   
+    <p>
+		<label>First name: <input name="firstName" /></label>
+	</p>
+
+    <p>
+		<label>Last name: <input name="lastName" /></label>
+	</p>
+    <p>
+		<label>Address: <input name="address" /></label>
+	</p>
+
+    <p>
+		Gender :
+		<label><input type="radio" name="gender" value="male" /> Male</label>
+		<label><input type="radio" name="gender" value="female" /> Female</label>
+	</p>
+    
+    <p>
+		<label>Email Id:<input type="email" name="email" /></label>
+	</p>
+
+    <p>
+		<label>Mobile: <input name="mobile" /></label>
+	</p>
+
+    <p>
+        <label> Location
+		<br />
+		<select name="location">
+			<option>select option</option>
+			<option>Boardwalk</option>
+			<option>Brooklyn</option>
+			<option>Lynnwood</option>
+			<option>Sunnyside</option>
+
+		</select>
+		</label>
+	</p>   
+		<button style="display: inline; margin-right: 20px; margin: 0 auto;" class="btns" onclick="cookieFunction()" >Sign-Up</button>
+
+		<button style="display: inline; margin-right: 20px; margin: 0 auto;" onclick="checkCookie()" class="btns" >Reset</button>
+	</fieldset>
+</form>
+
+<script>
+    function confirmData(){
+
+        var fName = document.forms['myForm']['firstName'].value;
+        var lName = document.forms['myForm']['lastName'].value;
+        var address = document.forms['myForm']['address'].value;
+        var gender = document.forms['myForm']['gender'].value;
+        var email = document.forms['myForm']['email'].value;
+        var mobile = document.forms['myForm']['mobile'].value;
+        var location = document.forms['myForm']['location'].value;
+
+
+        try{
+
+            if(fName == "") throw "First Name is empty";
+            if(lName == "") throw "Last Name is empty";
+            if(address == "") throw "Address is empty";
+            if(gender == "") throw "Gender is empty";
+            if(email == "") throw "Email is empty";
+            if(mobile == "") throw "Mobile number is empty";
+            if(location == "") throw "Location is empty";
+
+        }
+        catch(error){
+            window.alert("Caught error: "+ error);
+        }
+        finally{
+            window.alert("Finally Cannot submit your form");
+        }
+        
+    }
+
+    function cookieFunction(){
+        var fName = document.forms['myForm']['firstName'].value;
+        var email = document.forms['myForm']['email'].value;
+        var mobile = document.forms['myForm']['mobile'].value;
+
+        document.cookie=RegCookie;  
+        RegCookie = "username"+"="+fName+ ";"+ "email"+"="+email+";"+"mobile"+"="+mobile+";"+"expires"+"="+"30*24*60*60*1000";
+
+       if (RegCookie == ""){
+        window.alert('Cookie not set');
+       }else{
+        window.alert('Cookie set');
+       }
+
+
+    }
+
+    function checkCookie(){
+        document.cookie = "username=Max Brown; expires=Wed, 05 Aug 2020 23:00:00 UTC";
+        if(document.cookie.length != 0){
+            alert("There are cookies");
+        }else{
+            window.alert("Checking cookie: No cookie!");
+        }
+    }
+</script>
+</body>
+</html>

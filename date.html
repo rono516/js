@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+    
+</head>
+<body> 
+    
+
+    <h2>Update Form</h2>
+
+    <div >
+
+    <form>
+     <fieldset>
+        <legend>Update Date</legend>
+                <br>
+        When was this website updated? : <input id="date" name="date" placeholder="YYYY-MM-DD" value="2022-10-29" min="2022-01-01" max="2022-12-12" type="year">
+        <br>
+        <br>
+
+        <div style="text-align: right ;">
+           <button type="submit"  style="margin-left: auto;" onclick="submitDate()">Send Update Date</button>
+        </div>
+    </fieldset>
+    </form>
+
+</div>
+
+
+    <script>
+        function submitDate(){
+            let dateInput = document.getElementById("date");
+            window.alert("This page was last updated: "+dateInput.value);
+        }
+    </script>
+    
+</body>
+</html>

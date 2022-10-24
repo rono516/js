@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <p id="elements"> </p> -->
+    <table>
+        <th>Hamna Pressure</th>
+        <td><p id="elements"></p></td>
+
+    </table>
+    <script>
+
+        var myCars = ["BMW M4", "Nissan Versa", "Honda Civic", "Hyundai Elantra Hybrid", "Nissan Magnite", "Hyundai Alcazar"];
+        myCars.forEach(element => {
+
+                       for (var i=0; i<myCars.length; i++){
+               
+                document.getElementById('elements').innerHTML = myCars[i];
+            }
+  // document.getElementById("elements").innerHTML= JSON.stringify(myCars); 
+});
+
+
+        </script>
+</body>
+</html>
